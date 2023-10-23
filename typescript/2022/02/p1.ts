@@ -12,7 +12,7 @@ const scores: {[ key: string]: number} = {
     Z: 3,
 }
 
-const Losing: {[key: string]: string} = {
+const losing: {[key: string]: string} = {
     A: "Y",
     B: "Z",
     C: "X",
@@ -25,14 +25,12 @@ rounds.forEach(round => {
     score += responseScore;
 
     // win
-    if (Losing[move] === response) {
+    if (losing[move] === response) {
         score += 6;
         return;
     }
 
-
     const moveScore = scores[move];
-
 
     //draw
     if (moveScore === responseScore) {
