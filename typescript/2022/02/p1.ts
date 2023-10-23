@@ -19,15 +19,15 @@ const losing: {[key: string]: string} = {
 }
 
 let score = 0;
-rounds.forEach(round => {
-    const [move, response] = round.split(" ");
+for (let i = 0; i < rounds.length; i++) {
+    const [move, response] = rounds[i].split(" ");
     const responseScore = scores[response];
     score += responseScore;
 
     // win
     if (losing[move] === response) {
         score += 6;
-        return;
+        continue;
     }
 
     const moveScore = scores[move];
@@ -36,6 +36,6 @@ rounds.forEach(round => {
     if (moveScore === responseScore) {
         score += 3;
     }
-})
+}
 
-console.log("P1", score); // ~1.05ms
+console.log("P1", score); // ~0.82ms
