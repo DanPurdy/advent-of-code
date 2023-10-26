@@ -1,5 +1,5 @@
 import * as fs from "fs";
-console.time();
+
 const file = fs.readFileSync("./input.txt").toString();
 const pairs: string[] = file.split("\n");
 
@@ -28,7 +28,5 @@ for (let i = 0; i < pairs.length; i++) {
         pairCount++;
     }
 }
-
-console.timeEnd();
 
 console.log("P1", pairCount); // ~0.78ms

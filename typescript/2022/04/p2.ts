@@ -1,6 +1,5 @@
 import * as fs from "fs";
 
-console.time();
 const file = fs.readFileSync("./input.txt").toString();
 const pairs: string[] = file.split("\n");
 
@@ -26,5 +25,5 @@ for (let i = 0; i < pairs.length; i++) {
         overlapCount++;
     }
 }
-console.timeEnd();
+
 console.log("P2", overlapCount); // ~0.77ms
